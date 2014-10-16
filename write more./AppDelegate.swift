@@ -69,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
   
   func saveTodaysWordCount() {
     var todayString: String = todaysDateAsString()
-    var wordCountToDateMap: NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(wordCountToDateMapKey) as NSDictionary
+    var wordCountToDateMap: NSDictionary? = NSUserDefaults.standardUserDefaults().valueForKey(wordCountToDateMapKey) as? NSDictionary
     if wordCountToDateMap == nil { wordCountToDateMap = NSDictionary() }
     
     var mutableWCMap = NSMutableDictionary(dictionary: wordCountToDateMap)
@@ -80,12 +80,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
   }
   
   func restoreTodaysWordCount() {
-    var wordCountToDateMap: NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(wordCountToDateMapKey) as NSDictionary
-    if wordCountToDateMap != nil {
-      println(wordCountToDateMap)
+    var wordCountToDateMap: NSDictionary? = NSUserDefaults.standardUserDefaults().valueForKey(wordCountToDateMapKey) as? NSDictionary
+    if let wcMap = wordCountToDateMap {
+      println(wcMap)
       var todayString: String = todaysDateAsString()
-      if wordCountToDateMap[todayString] {
-        wordCountToday = wordCountToDateMap[todayString] as Int
+      if wcMap[todayString] {
+        wordCountToday = wcMap[todayString] as Int
         updateTodaysWordCountString()
       }
     }
