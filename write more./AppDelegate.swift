@@ -21,11 +21,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
   var textKey: String = "words"
   var wordCountToDateMapKey: String = "wordCount"
   
+  var autoSaveTimer: NSTimer!
+  
   func applicationDidFinishLaunching(aNotification: NSNotification?) {
     window.backgroundColor = NSColor.whiteColor()
     textView.font = NSFont(name: "Avenir Next", size: 13)
     restoreText()
     restoreTodaysWordCount()
+    startAutoSaveTimer()
   }
   
   func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication!) -> Bool {
@@ -35,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
   func applicationWillTerminate(aNotification: NSNotification?) {
     saveText()
     saveTodaysWordCount()
+    stopAutoSaveTimer()
   }
 
   func textDidChange(notification: NSNotification!) {
@@ -91,6 +95,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
     }
   }
   
+  func startAutoSaveTimer() {
+    autoSaveTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("autoSave"), userInfo: nil, repeats: true)
+  }
+  
+  func stopAutoSaveTimer() {
+    autoSaveTimer.invalidate()
+  }
+  
+  func autoSave() {
+    saveText()
+    saveTodaysWordCount()
+  }
+  
   @IBAction func displayMyStats(sender: NSObject) {
     var wordCountToDateMap: NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(wordCountToDateMapKey) as NSDictionary
     if wordCountToDateMap != nil {
@@ -114,6 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
   
   func wordCount(s: String) -> Int {
     // TODO 0: Return 0 for a string containing all whitespace.
+    // TODO 0: Trim leading and trailing whitespace.
     if (s.isEmpty) { return 0 }
     var words = s.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     return words.count
