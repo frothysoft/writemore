@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DashboardViewController" customModule="WriteMore" customModuleProvider="target">
+            <connections>
+                <outlet property="arrayController" destination="Vh5-G1-WlZ" id="MJe-Sh-DRM"/>
+                <outlet property="tableView" destination="FA8-Wo-FRs" id="7ai-0k-Vy9"/>
+                <outlet property="view" destination="ElO-tu-9lg" id="dWf-Le-tQS"/>
+                <outlet property="wordCountTextField" destination="Krs-Hj-Fed" id="cHc-dO-Meo"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="ElO-tu-9lg">
+            <rect key="frame" x="0.0" y="0.0" width="790" height="584"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYm-kJ-dwb">
+                    <rect key="frame" x="28" y="20" width="144" height="491"/>
+                    <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="kH2-ld-2rl">
+                        <rect key="frame" x="1" y="0.0" width="238" height="134"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="28" id="FA8-Wo-FRs" customClass="ClickableTableView" customModule="WriteMore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <size key="intercellSpacing" width="3" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <tableColumns>
+                                    <tableColumn editable="NO" width="141.11298850941989" minWidth="40" maxWidth="1000" id="Odi-kC-PCf">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                        </tableHeaderCell>
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="beo-DG-k7C">
+                                            <font key="font" size="14" name="AvenirNext-Bold"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                        <connections>
+                                            <binding destination="Vh5-G1-WlZ" name="value" keyPath="arrangedObjects.text" id="NXu-Xv-sXI">
+                                                <dictionary key="options">
+                                                    <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </tableColumn>
+                                </tableColumns>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Qzc-5A-aBr">
+                        <rect key="frame" x="1" y="119" width="223" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="uCu-8W-hUq">
+                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="EdX-7h-hGG" userLabel="new project">
+                    <rect key="frame" x="28" y="531" width="144" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="144" id="pp6-DF-eq3"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" title=" new project" bezelStyle="regularSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="nr3-B6-sBI">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="20" name="AvenirNext-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="newProjectButtonPressed:" target="-2" id="rbv-lI-ZQG"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zNs-5i-dDj">
+                    <rect key="frame" x="28" y="531" width="18" height="33"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="+" id="aJw-Qu-Jf6">
+                        <font key="font" size="20" name="AvenirNext-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Krs-Hj-Fed" userLabel="word count">
+                    <rect key="frame" x="250" y="361" width="291" height="213"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="232" id="AGP-3J-73t">
+                        <font key="font" size="144" name="AmericanTypewriter-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hxY-Tt-4Jt">
+                    <rect key="frame" x="324" y="350" width="143" height="41"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="words today" id="xy8-iu-JZc">
+                        <font key="font" size="24" name="AvenirNext-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="zNs-5i-dDj" firstAttribute="leading" secondItem="ElO-tu-9lg" secondAttribute="leading" constant="30" id="7p3-3o-iKM"/>
+                <constraint firstAttribute="bottom" secondItem="lYm-kJ-dwb" secondAttribute="bottom" constant="20" id="D9M-8I-4fD"/>
+                <constraint firstItem="EdX-7h-hGG" firstAttribute="leading" secondItem="lYm-kJ-dwb" secondAttribute="leading" id="EZ0-1K-5xC"/>
+                <constraint firstItem="Krs-Hj-Fed" firstAttribute="top" secondItem="ElO-tu-9lg" secondAttribute="top" constant="10" id="J4C-6n-JSk"/>
+                <constraint firstItem="zNs-5i-dDj" firstAttribute="bottom" secondItem="EdX-7h-hGG" secondAttribute="bottom" id="Rpb-Dr-Sn3"/>
+                <constraint firstAttribute="centerX" secondItem="Krs-Hj-Fed" secondAttribute="centerX" id="Tf7-Yo-UNw"/>
+                <constraint firstItem="lYm-kJ-dwb" firstAttribute="top" secondItem="zNs-5i-dDj" secondAttribute="bottom" constant="20" id="VG8-Ga-INB"/>
+                <constraint firstItem="EdX-7h-hGG" firstAttribute="trailing" secondItem="lYm-kJ-dwb" secondAttribute="trailing" id="YOE-tl-Ptg"/>
+                <constraint firstItem="zNs-5i-dDj" firstAttribute="leading" secondItem="EdX-7h-hGG" secondAttribute="leading" constant="2" id="YfZ-Ol-bAR"/>
+                <constraint firstItem="Krs-Hj-Fed" firstAttribute="centerX" secondItem="hxY-Tt-4Jt" secondAttribute="centerX" id="bDj-AM-l9g"/>
+                <constraint firstItem="hxY-Tt-4Jt" firstAttribute="top" secondItem="Krs-Hj-Fed" secondAttribute="bottom" constant="-30" id="cSb-mp-hdS"/>
+                <constraint firstItem="zNs-5i-dDj" firstAttribute="top" secondItem="EdX-7h-hGG" secondAttribute="top" id="nXJ-Pj-tXC"/>
+                <constraint firstItem="zNs-5i-dDj" firstAttribute="top" secondItem="ElO-tu-9lg" secondAttribute="top" constant="20" id="rRU-sZ-nSD"/>
+            </constraints>
+        </view>
+        <arrayController mode="entity" entityName="Project" editable="NO" automaticallyPreparesContent="YES" preservesSelection="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" automaticallyRearrangesObjects="YES" id="Vh5-G1-WlZ" userLabel="ProjectsArrayController"/>
+    </objects>
+</document>

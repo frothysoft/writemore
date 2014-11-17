@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ProjectViewController" customModule="WriteMore" customModuleProvider="target">
+            <connections>
+                <outlet property="textView" destination="iG1-q4-OTt" id="egr-Lu-YdB"/>
+                <outlet property="view" destination="SnF-c8-4Ta" id="vvz-Jn-6Bl"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="SnF-c8-4Ta">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTI-8t-z8J">
+                    <rect key="frame" x="20" y="20" width="560" height="440"/>
+                    <clipView key="contentView" id="bQF-uD-VHI">
+                        <rect key="frame" x="1" y="1" width="223" height="133"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="iG1-q4-OTt">
+                                <rect key="frame" x="0.0" y="0.0" width="223" height="440"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="560" height="440"/>
+                                <size key="maxSize" width="560" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="560" height="440"/>
+                                <size key="maxSize" width="560" height="10000000"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="naZ-O1-QfD">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="XeP-5g-9Qw">
+                        <rect key="frame" x="224" y="1" width="15" height="133"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jTI-8t-z8J" firstAttribute="leading" secondItem="SnF-c8-4Ta" secondAttribute="leading" constant="20" id="RA9-59-uQp"/>
+                <constraint firstAttribute="bottom" secondItem="jTI-8t-z8J" secondAttribute="bottom" constant="20" id="nLK-AF-gSn"/>
+                <constraint firstAttribute="trailing" secondItem="jTI-8t-z8J" secondAttribute="trailing" constant="20" id="tMU-c8-jVG"/>
+                <constraint firstItem="jTI-8t-z8J" firstAttribute="top" secondItem="SnF-c8-4Ta" secondAttribute="top" constant="20" id="zdA-gx-GLX"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
