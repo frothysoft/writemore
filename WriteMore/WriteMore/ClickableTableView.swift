@@ -22,9 +22,9 @@ class ClickableTableView: NSTableView {
     var globalLocation = theEvent.locationInWindow
     var localLocation = convertPoint(globalLocation, fromView: nil)
     var clickedRow = rowAtPoint(localLocation)
-  
+    
     super.mouseDown(theEvent)
-  
+    
     if clickedRow != -1 {
       clickableTableViewDelegate?.tableView(self, didClickRow: clickedRow)
     }

@@ -21,7 +21,7 @@ class Project: NSManagedObject {
     } else {
       return self.text
     }
-  }()
+    }()
 }
 
 protocol ProjectStore {

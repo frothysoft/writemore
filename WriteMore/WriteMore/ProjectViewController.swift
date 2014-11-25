@@ -9,7 +9,7 @@
 import Cocoa
 
 class ProjectViewController: NSViewController, NSTextViewDelegate {
-
+  
   var wordCountStore: WordCountStore!
   var previousWordCount: Int = 0
   
@@ -19,18 +19,18 @@ class ProjectViewController: NSViewController, NSTextViewDelegate {
     
     didSet {
       if let p = project {
-        textView.textStorage?.setAttributedString(p.text)
         previousWordCount = countWords(p.text.string)
       }
     }
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  // TODO 1: Do all this in the window controller.
+  func configureViewController() {
     var app: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
     wordCountStore = app.wordCountStore
     configureView()
     configureTextView()
+    if let p = project { textView.textStorage?.setAttributedString(p.text) }
   }
   
   func textDidChange(notification: NSNotification) {

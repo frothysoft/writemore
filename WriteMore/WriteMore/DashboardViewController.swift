@@ -18,15 +18,16 @@ class DashboardViewController: NSViewController {
   var wordCountStore: WordCountStore!
   
   @IBOutlet weak var tableView: ClickableTableView!
+  @IBOutlet weak var dailyWordCountProgressView: DailyWordCountProgressView!
   
   @IBOutlet var arrayController: NSArrayController!
   
   @IBOutlet weak var wordCountTextField: NSTextField!
   
-  // TODO 0: Figure out how to reoopen the dashboard once it is closed.
+  // TODO 0: Figure out how to reoopen the dashboard once it is closed and projects are still open.
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  // TODO 1: Do all this in the window controller.
+  func configureViewController() {
     var app: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
     // TODO 0: Set up the view stack manually so the application delegate methods fire before this
     // viewDidLoad() method is called.
@@ -38,6 +39,7 @@ class DashboardViewController: NSViewController {
     configureTableView()
     configureView()
     configureWordCountController()
+    configureDailyWordCountProgressView()
     
     // TODO 0: Do not compile this code for production.
     configureDeleteDatabaseButton()
@@ -49,14 +51,8 @@ class DashboardViewController: NSViewController {
   }
   
   func showProject(project: Project) {
-    if projectWindowManager.canOpenProject(project) {
-      latestProject = project
-      projectWindowManager.projectOpened(project)
-      performSegueWithIdentifier("newProject", sender: self)
-    } else {
-      // TODO 1: Bring the project to the front.
-      println("Project already opened")
-    }
+    latestProject = project
+    projectWindowManager.openProject(project)
   }
   
   override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
@@ -129,6 +125,10 @@ extension DashboardViewController {
     view.layer?.backgroundColor = NSColor.whiteColor().CGColor
   }
   
+  func configureDailyWordCountProgressView() {
+    let wordCountDisplayables = wordCountStore.pastWeeksWordCountDisplayables()
+    dailyWordCountProgressView.wordCountDisplayables = wordCountDisplayables
+  }
 }
 
 // TODO 0: Remove the button from the storyboard and do not compile this code for production.

@@ -17,11 +17,11 @@
 		AE5EF55B1A1287C000874295 /* ClickableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EF55A1A1287C000874295 /* ClickableTableView.swift */; };
 		AE5EF5631A12C55700874295 /* ProjectWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EF5621A12C55700874295 /* ProjectWindowController.swift */; };
 		AE5EF5651A13ADBD00874295 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EF5641A13ADBD00874295 /* WordCount.swift */; };
+		AE9837DB1A236017008EA06E /* DailyWordCountProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9837DA1A236017008EA06E /* DailyWordCountProgressView.swift */; };
 		AEF3F60C1A0EB011001921DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3F60B1A0EB011001921DD /* AppDelegate.swift */; };
 		AEF3F60E1A0EB011001921DD /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3F60D1A0EB011001921DD /* DashboardViewController.swift */; };
 		AEF3F6111A0EB011001921DD /* WriteMore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEF3F60F1A0EB011001921DD /* WriteMore.xcdatamodeld */; };
 		AEF3F6131A0EB011001921DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF3F6121A0EB011001921DD /* Images.xcassets */; };
-		AEF3F6161A0EB011001921DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF3F6141A0EB011001921DD /* Main.storyboard */; };
 		AEF3F6221A0EB011001921DD /* WriteMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3F6211A0EB011001921DD /* WriteMoreTests.swift */; };
 		AEF3F62C1A0EB046001921DD /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3F62B1A0EB046001921DD /* Project.swift */; };
 /* End PBXBuildFile section */
@@ -47,13 +47,13 @@
 		AE5EF55A1A1287C000874295 /* ClickableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickableTableView.swift; sourceTree = "<group>"; };
 		AE5EF5621A12C55700874295 /* ProjectWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowController.swift; sourceTree = "<group>"; };
 		AE5EF5641A13ADBD00874295 /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
+		AE9837DA1A236017008EA06E /* DailyWordCountProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWordCountProgressView.swift; sourceTree = "<group>"; };
 		AEF3F6061A0EB011001921DD /* WriteMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WriteMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF3F60A1A0EB011001921DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF3F60B1A0EB011001921DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF3F60D1A0EB011001921DD /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		AEF3F6101A0EB011001921DD /* WriteMore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WriteMore.xcdatamodel; sourceTree = "<group>"; };
 		AEF3F6121A0EB011001921DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AEF3F6151A0EB011001921DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEF3F61B1A0EB011001921DD /* WriteMoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WriteMoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF3F6201A0EB011001921DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF3F6211A0EB011001921DD /* WriteMoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMoreTests.swift; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 				AEF3F62B1A0EB046001921DD /* Project.swift */,
 				AE5EF5641A13ADBD00874295 /* WordCount.swift */,
 				AE5EF55A1A1287C000874295 /* ClickableTableView.swift */,
+				AE9837DA1A236017008EA06E /* DailyWordCountProgressView.swift */,
 				AE5E9FB71A1A70E2002EB460 /* MainMenu.xib */,
-				AEF3F6141A0EB011001921DD /* Main.storyboard */,
 				AEF3F6121A0EB011001921DD /* Images.xcassets */,
 				AEF3F60F1A0EB011001921DD /* WriteMore.xcdatamodeld */,
 				AEF3F6091A0EB011001921DD /* Supporting Files */,
@@ -231,7 +231,6 @@
 				AE5E9FC21A1A744D002EB460 /* ProjectWindowController.xib in Resources */,
 				AE5E9FC01A1A72B4002EB460 /* ProjectViewController.xib in Resources */,
 				AE5E9FBE1A1A7250002EB460 /* FakeViewController.xib in Resources */,
-				AEF3F6161A0EB011001921DD /* Main.storyboard in Resources */,
 				AE5E9FB81A1A70E2002EB460 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +253,7 @@
 				AE5EF52C1A1019C700874295 /* ProjectViewController.swift in Sources */,
 				AEF3F60E1A0EB011001921DD /* DashboardViewController.swift in Sources */,
 				AE5EF55B1A1287C000874295 /* ClickableTableView.swift in Sources */,
+				AE9837DB1A236017008EA06E /* DailyWordCountProgressView.swift in Sources */,
 				AEF3F60C1A0EB011001921DD /* AppDelegate.swift in Sources */,
 				AE5EF5631A12C55700874295 /* ProjectWindowController.swift in Sources */,
 				AEF3F6111A0EB011001921DD /* WriteMore.xcdatamodeld in Sources */,
@@ -279,17 +279,6 @@
 			targetProxy = AEF3F61C1A0EB011001921DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AEF3F6141A0EB011001921DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEF3F6151A0EB011001921DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AEF3F6231A0EB011001921DD /* Debug */ = {
@@ -380,6 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -394,6 +384,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

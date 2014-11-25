@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="DashboardViewController" customModule="WriteMore" customModuleProvider="target">
             <connections>
                 <outlet property="arrayController" destination="Vh5-G1-WlZ" id="MJe-Sh-DRM"/>
+                <outlet property="dailyWordCountProgressView" destination="0Fo-Id-c46" id="q7n-q4-Oq3"/>
                 <outlet property="tableView" destination="FA8-Wo-FRs" id="7ai-0k-Vy9"/>
                 <outlet property="view" destination="ElO-tu-9lg" id="dWf-Le-tQS"/>
                 <outlet property="wordCountTextField" destination="Krs-Hj-Fed" id="cHc-dO-Meo"/>
@@ -53,6 +54,9 @@
                                         </connections>
                                     </tableColumn>
                                 </tableColumns>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="tVf-RW-FU7"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -103,6 +107,13 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="0Fo-Id-c46" customClass="DailyWordCountProgressView" customModule="WriteMore" customModuleProvider="target">
+                    <rect key="frame" x="195" y="240" width="520" height="105"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="520" id="Uvj-G2-mxG"/>
+                        <constraint firstAttribute="height" constant="105" id="ZJ3-Zg-eKB"/>
+                    </constraints>
+                </customView>
             </subviews>
             <constraints>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="leading" secondItem="ElO-tu-9lg" secondAttribute="leading" constant="30" id="7p3-3o-iKM"/>
@@ -114,12 +125,15 @@
                 <constraint firstItem="lYm-kJ-dwb" firstAttribute="top" secondItem="zNs-5i-dDj" secondAttribute="bottom" constant="20" id="VG8-Ga-INB"/>
                 <constraint firstItem="EdX-7h-hGG" firstAttribute="trailing" secondItem="lYm-kJ-dwb" secondAttribute="trailing" id="YOE-tl-Ptg"/>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="leading" secondItem="EdX-7h-hGG" secondAttribute="leading" constant="2" id="YfZ-Ol-bAR"/>
+                <constraint firstItem="0Fo-Id-c46" firstAttribute="leading" secondItem="lYm-kJ-dwb" secondAttribute="trailing" constant="23" id="Zav-dt-Z3I"/>
                 <constraint firstItem="Krs-Hj-Fed" firstAttribute="centerX" secondItem="hxY-Tt-4Jt" secondAttribute="centerX" id="bDj-AM-l9g"/>
                 <constraint firstItem="hxY-Tt-4Jt" firstAttribute="top" secondItem="Krs-Hj-Fed" secondAttribute="bottom" constant="-30" id="cSb-mp-hdS"/>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="top" secondItem="EdX-7h-hGG" secondAttribute="top" id="nXJ-Pj-tXC"/>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="top" secondItem="ElO-tu-9lg" secondAttribute="top" constant="20" id="rRU-sZ-nSD"/>
+                <constraint firstItem="0Fo-Id-c46" firstAttribute="top" secondItem="hxY-Tt-4Jt" secondAttribute="bottom" constant="5" id="y2b-An-PD4"/>
             </constraints>
         </view>
         <arrayController mode="entity" entityName="Project" editable="NO" automaticallyPreparesContent="YES" preservesSelection="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" automaticallyRearrangesObjects="YES" id="Vh5-G1-WlZ" userLabel="ProjectsArrayController"/>
+        <userDefaultsController representsSharedInstance="YES" id="kck-bO-M0X"/>
     </objects>
 </document>

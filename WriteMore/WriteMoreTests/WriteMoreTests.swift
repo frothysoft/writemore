@@ -36,3 +36,17 @@ class WriteMoreTests: XCTestCase {
 }
 
 // TODO 0: Write database tests using an in memory core data store.
+/*
+NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"SomeClass")];
+NSString* path = [bundle pathForResource:@"WriteMore" ofType:@"momd"];
+NSURL *modURL = [NSURL URLWithString:path];
+NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:momURL];
+NSPersistentStoreCoordinator *coord = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: model];
+NSPersistentStore *store = [coord addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:nil error:nil];
+testingContext = [[NSManagedObjectContext alloc] init];
+[testingContext setPersistentStoreCoordinator: coord];
+*/
+
+/*
+http://augustl.com/blog/2011/unit_testing_ios_core_data_versioned_or_multiple_models/
+*/

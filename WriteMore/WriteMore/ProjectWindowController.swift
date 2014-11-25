@@ -12,20 +12,44 @@ import Cocoa
 // TODO 1: Take manager out of the name.
 class ProjectWindowManager {
   
-  var openProjects: [Project]! = []
+  var openProjects: [Project: ProjectWindowController]! = [Project: ProjectWindowController]()
   
-  func canOpenProject(project: Project) -> Bool {
-    return !contains(openProjects, project)
+  func windowControllerForProject(project: Project) -> ProjectWindowController! {
+    var projectWindowController = openProjects[project]
+    if projectWindowController == nil {
+      projectWindowController = createProjectWindowControllerWithProject(project)
+      openProjects[project] = projectWindowController
+    }
+    return projectWindowController
   }
   
-  func projectOpened(project: Project) {
-    assert(canOpenProject(project), "Project is already opened. \(project)")
-    openProjects.append(project)
+  func createProjectWindowControllerWithProject(project: Project) -> ProjectWindowController! {
+    let projectWindowController = ProjectWindowController(windowNibName: "ProjectWindowController")
+    var projectViewController = ProjectViewController(nibName: "ProjectViewController", bundle: nil)
+    if let pvc = projectViewController {
+      pvc.project = project
+      pvc.configureViewController()
+      projectWindowController.projectViewController = pvc
+      if let window = projectWindowController.window {
+        window.contentView = pvc.view
+        return projectWindowController
+      } else {
+        assertionFailure("Project window controller's window could not be loaded")
+        return nil
+      }
+    }
+    assertionFailure("Project view controller could not be loaded")
+    return nil
+  }
+  
+  func openProject(project: Project) {
+    let projectWindowController = windowControllerForProject(project)
+    projectWindowController.showWindow(self)
   }
   
   func projectClosed(project: Project) {
-    if let index = find(openProjects, project) {
-      openProjects.removeAtIndex(index)
+    if let projectWindowController = openProjects[project] {
+      openProjects.removeValueForKey(project)
     } else {
       // TODO 1: Use a logging framework.
       println("WARNING: Closing a project that is not opened.")
@@ -35,16 +59,19 @@ class ProjectWindowManager {
 }
 
 class ProjectWindowController: NSWindowController, NSWindowDelegate {
-
+  
   var project: Project?
   var projectWindowManager: ProjectWindowManager!
+  // TODO 1: Create the pvc inside this window controller. (Actually, read the docs first then
+  // set this up in the place where it makes the most since in mac world.)
+  var projectViewController: ProjectViewController!
   
   override func windowDidLoad() {
     super.windowDidLoad()
     var app: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
     projectWindowManager = app.projectWindowManager
   }
-
+  
   func windowWillClose(notification: NSNotification) {
     if let p = project {
       projectWindowManager.projectClosed(p)
