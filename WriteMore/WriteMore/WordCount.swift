@@ -27,7 +27,7 @@ class WordCountDisplayable {
   init(wordCount: WordCount?, date: NSDate) {
     if let wc = wordCount {
       self.numberOfWords = wc.numberOfWords
-      if wc.numberOfWords >= 50 {
+      if wc.numberOfWords >= 1 {
         self.statusColor = NSColor.greenColor()
       } else {
         self.statusColor = NSColor.grayColor()

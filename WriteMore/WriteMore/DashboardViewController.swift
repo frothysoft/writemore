@@ -41,8 +41,10 @@ class DashboardViewController: NSViewController {
     configureWordCountController()
     configureDailyWordCountProgressView()
     
-    // TODO 0: Do not compile this code for production.
+    // TODO 1: This actually does not show the delete database button in debug mode.
+    #if DEBUG
     configureDeleteDatabaseButton()
+    #endif
   }
   
   @IBAction func newProjectButtonPressed(sender: AnyObject) {

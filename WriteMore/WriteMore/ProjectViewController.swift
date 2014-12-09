@@ -62,7 +62,7 @@ extension ProjectViewController {
     // TODO 0: Return 0 for a string containing all whitespace.
     // TODO 0: Trim leading and trailing whitespace.
     if (s.isEmpty) { return 0 }
-    var words = s.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    var words = s.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     return words.count
   }
   
