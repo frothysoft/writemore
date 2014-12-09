@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DashboardViewController" customModule="WriteMore" customModuleProvider="target">
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYm-kJ-dwb">
-                    <rect key="frame" x="28" y="20" width="144" height="491"/>
+                    <rect key="frame" x="28" y="20" width="144" height="420"/>
                     <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="kH2-ld-2rl">
                         <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
                     </scroller>
                 </scrollView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="EdX-7h-hGG" userLabel="new project">
-                    <rect key="frame" x="28" y="531" width="144" height="33"/>
+                    <rect key="frame" x="28" y="480" width="144" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="144" id="pp6-DF-eq3"/>
                     </constraints>
@@ -84,53 +84,63 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zNs-5i-dDj">
-                    <rect key="frame" x="28" y="531" width="18" height="33"/>
+                    <rect key="frame" x="28" y="480" width="18" height="33"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="+" id="aJw-Qu-Jf6">
                         <font key="font" size="20" name="AvenirNext-Bold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Krs-Hj-Fed" userLabel="word count">
-                    <rect key="frame" x="250" y="361" width="291" height="213"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="232" id="AGP-3J-73t">
-                        <font key="font" size="144" name="AmericanTypewriter-Bold"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hxY-Tt-4Jt">
-                    <rect key="frame" x="324" y="350" width="143" height="41"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="words today" id="xy8-iu-JZc">
-                        <font key="font" size="24" name="AvenirNext-Regular"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="0Fo-Id-c46" customClass="DailyWordCountProgressView" customModule="WriteMore" customModuleProvider="target">
-                    <rect key="frame" x="195" y="240" width="520" height="105"/>
+                <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RPX-7H-erU">
+                    <rect key="frame" x="200" y="220" width="540" height="374"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krs-Hj-Fed" userLabel="word count">
+                            <rect key="frame" x="123" y="141" width="291" height="213"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="232" id="AGP-3J-73t">
+                                <font key="font" size="144" name="AmericanTypewriter-Bold"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxY-Tt-4Jt">
+                            <rect key="frame" x="209" y="133" width="143" height="41"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="words today" id="xy8-iu-JZc">
+                                <font key="font" size="24" name="AvenirNext-Regular"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fo-Id-c46" customClass="DailyWordCountProgressView" customModule="WriteMore" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="20" width="560" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="520" id="Uvj-G2-mxG"/>
+                                <constraint firstAttribute="height" constant="105" id="ZJ3-Zg-eKB"/>
+                            </constraints>
+                        </customView>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" constant="520" id="Uvj-G2-mxG"/>
-                        <constraint firstAttribute="height" constant="105" id="ZJ3-Zg-eKB"/>
+                        <constraint firstAttribute="bottom" secondItem="0Fo-Id-c46" secondAttribute="bottom" constant="20" id="4NZ-Lk-DWO"/>
+                        <constraint firstAttribute="centerX" secondItem="Krs-Hj-Fed" secondAttribute="centerX" constant="-0.5" id="EBb-Gw-loB"/>
+                        <constraint firstItem="hxY-Tt-4Jt" firstAttribute="centerX" secondItem="Krs-Hj-Fed" secondAttribute="centerX" constant="12" id="fQV-dp-pHf"/>
+                        <constraint firstItem="Krs-Hj-Fed" firstAttribute="top" secondItem="RPX-7H-erU" secondAttribute="top" id="gOj-l5-BFp"/>
+                        <constraint firstAttribute="centerX" secondItem="0Fo-Id-c46" secondAttribute="centerX" constant="-10" id="gXM-G9-Jgb"/>
+                        <constraint firstItem="hxY-Tt-4Jt" firstAttribute="top" secondItem="Krs-Hj-Fed" secondAttribute="bottom" constant="-33" id="znl-Oc-0fL"/>
                     </constraints>
                 </customView>
             </subviews>
             <constraints>
+                <constraint firstItem="RPX-7H-erU" firstAttribute="leading" secondItem="ElO-tu-9lg" secondAttribute="leading" constant="200" id="3Q3-0O-c2Z"/>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="leading" secondItem="ElO-tu-9lg" secondAttribute="leading" constant="30" id="7p3-3o-iKM"/>
+                <constraint firstItem="RPX-7H-erU" firstAttribute="top" secondItem="ElO-tu-9lg" secondAttribute="top" id="8vN-ke-bMC"/>
                 <constraint firstAttribute="bottom" secondItem="lYm-kJ-dwb" secondAttribute="bottom" constant="20" id="D9M-8I-4fD"/>
                 <constraint firstItem="EdX-7h-hGG" firstAttribute="leading" secondItem="lYm-kJ-dwb" secondAttribute="leading" id="EZ0-1K-5xC"/>
-                <constraint firstItem="Krs-Hj-Fed" firstAttribute="top" secondItem="ElO-tu-9lg" secondAttribute="top" constant="10" id="J4C-6n-JSk"/>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="bottom" secondItem="EdX-7h-hGG" secondAttribute="bottom" id="Rpb-Dr-Sn3"/>
-                <constraint firstAttribute="centerX" secondItem="Krs-Hj-Fed" secondAttribute="centerX" id="Tf7-Yo-UNw"/>
-                <constraint firstItem="lYm-kJ-dwb" firstAttribute="top" secondItem="zNs-5i-dDj" secondAttribute="bottom" constant="20" id="VG8-Ga-INB"/>
+                <constraint firstItem="lYm-kJ-dwb" firstAttribute="top" secondItem="zNs-5i-dDj" secondAttribute="bottom" constant="40" id="VG8-Ga-INB"/>
                 <constraint firstItem="EdX-7h-hGG" firstAttribute="trailing" secondItem="lYm-kJ-dwb" secondAttribute="trailing" id="YOE-tl-Ptg"/>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="leading" secondItem="EdX-7h-hGG" secondAttribute="leading" constant="2" id="YfZ-Ol-bAR"/>
-                <constraint firstItem="0Fo-Id-c46" firstAttribute="leading" secondItem="lYm-kJ-dwb" secondAttribute="trailing" constant="23" id="Zav-dt-Z3I"/>
-                <constraint firstItem="Krs-Hj-Fed" firstAttribute="centerX" secondItem="hxY-Tt-4Jt" secondAttribute="centerX" id="bDj-AM-l9g"/>
-                <constraint firstItem="hxY-Tt-4Jt" firstAttribute="top" secondItem="Krs-Hj-Fed" secondAttribute="bottom" constant="-30" id="cSb-mp-hdS"/>
+                <constraint firstAttribute="trailing" secondItem="RPX-7H-erU" secondAttribute="trailing" constant="50" id="lpM-OJ-q6j"/>
                 <constraint firstItem="zNs-5i-dDj" firstAttribute="top" secondItem="EdX-7h-hGG" secondAttribute="top" id="nXJ-Pj-tXC"/>
-                <constraint firstItem="zNs-5i-dDj" firstAttribute="top" secondItem="ElO-tu-9lg" secondAttribute="top" constant="20" id="rRU-sZ-nSD"/>
-                <constraint firstItem="0Fo-Id-c46" firstAttribute="top" secondItem="hxY-Tt-4Jt" secondAttribute="bottom" constant="5" id="y2b-An-PD4"/>
+                <constraint firstItem="zNs-5i-dDj" firstAttribute="top" secondItem="ElO-tu-9lg" secondAttribute="top" constant="71" id="rRU-sZ-nSD"/>
             </constraints>
         </view>
         <arrayController mode="entity" entityName="Project" editable="NO" automaticallyPreparesContent="YES" preservesSelection="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" automaticallyRearrangesObjects="YES" id="Vh5-G1-WlZ" userLabel="ProjectsArrayController"/>

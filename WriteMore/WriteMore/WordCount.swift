@@ -20,7 +20,7 @@ class WordCountDisplayable {
   
   class func dateFormatter() -> NSDateFormatter {
     let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "MM/dd"
+    dateFormatter.dateFormat = "MM/d"
     return dateFormatter
   }
   
@@ -28,12 +28,12 @@ class WordCountDisplayable {
     if let wc = wordCount {
       self.numberOfWords = wc.numberOfWords
       if wc.numberOfWords >= 1 {
-        self.statusColor = NSColor.greenColor()
+        self.statusColor = NSColor(rgbValue: 0x6BB718)
       } else {
-        self.statusColor = NSColor.grayColor()
+        self.statusColor = NSColor(rgbValue: 0xC2BEA8)
       }
     } else {
-      self.statusColor = NSColor.grayColor()
+      self.statusColor = NSColor(rgbValue: 0xC2BEA8)
     }
     self.dateString = WordCountDisplayable.dateFormatter().stringFromDate(date)
   }

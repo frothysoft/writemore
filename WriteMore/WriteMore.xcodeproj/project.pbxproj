@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AE5E9FB81A1A70E2002EB460 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FB71A1A70E2002EB460 /* MainMenu.xib */; };
-		AE5E9FBD1A1A7250002EB460 /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E9FBB1A1A7250002EB460 /* FakeViewController.swift */; };
-		AE5E9FBE1A1A7250002EB460 /* FakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FBC1A1A7250002EB460 /* FakeViewController.xib */; };
 		AE5E9FC01A1A72B4002EB460 /* ProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FBF1A1A72B4002EB460 /* ProjectViewController.xib */; };
 		AE5E9FC21A1A744D002EB460 /* ProjectWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FC11A1A744D002EB460 /* ProjectWindowController.xib */; };
 		AE5E9FC41A1A7495002EB460 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FC31A1A7495002EB460 /* DashboardViewController.xib */; };
@@ -17,6 +15,7 @@
 		AE5EF55B1A1287C000874295 /* ClickableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EF55A1A1287C000874295 /* ClickableTableView.swift */; };
 		AE5EF5631A12C55700874295 /* ProjectWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EF5621A12C55700874295 /* ProjectWindowController.swift */; };
 		AE5EF5651A13ADBD00874295 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EF5641A13ADBD00874295 /* WordCount.swift */; };
+		AE6307491A378EDA00F83FB2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6307481A378EDA00F83FB2 /* Colors.swift */; };
 		AE9837DB1A236017008EA06E /* DailyWordCountProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9837DA1A236017008EA06E /* DailyWordCountProgressView.swift */; };
 		AEF3F60C1A0EB011001921DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3F60B1A0EB011001921DD /* AppDelegate.swift */; };
 		AEF3F60E1A0EB011001921DD /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3F60D1A0EB011001921DD /* DashboardViewController.swift */; };
@@ -38,8 +37,6 @@
 
 /* Begin PBXFileReference section */
 		AE5E9FB71A1A70E2002EB460 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		AE5E9FBB1A1A7250002EB460 /* FakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
-		AE5E9FBC1A1A7250002EB460 /* FakeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FakeViewController.xib; sourceTree = "<group>"; };
 		AE5E9FBF1A1A72B4002EB460 /* ProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectViewController.xib; sourceTree = "<group>"; };
 		AE5E9FC11A1A744D002EB460 /* ProjectWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectWindowController.xib; sourceTree = "<group>"; };
 		AE5E9FC31A1A7495002EB460 /* DashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
@@ -47,6 +44,7 @@
 		AE5EF55A1A1287C000874295 /* ClickableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickableTableView.swift; sourceTree = "<group>"; };
 		AE5EF5621A12C55700874295 /* ProjectWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectWindowController.swift; sourceTree = "<group>"; };
 		AE5EF5641A13ADBD00874295 /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
+		AE6307481A378EDA00F83FB2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		AE9837DA1A236017008EA06E /* DailyWordCountProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWordCountProgressView.swift; sourceTree = "<group>"; };
 		AEF3F6061A0EB011001921DD /* WriteMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WriteMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF3F60A1A0EB011001921DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,12 +108,11 @@
 				AE5EF5641A13ADBD00874295 /* WordCount.swift */,
 				AE5EF55A1A1287C000874295 /* ClickableTableView.swift */,
 				AE9837DA1A236017008EA06E /* DailyWordCountProgressView.swift */,
+				AE6307481A378EDA00F83FB2 /* Colors.swift */,
 				AE5E9FB71A1A70E2002EB460 /* MainMenu.xib */,
 				AEF3F6121A0EB011001921DD /* Images.xcassets */,
 				AEF3F60F1A0EB011001921DD /* WriteMore.xcdatamodeld */,
 				AEF3F6091A0EB011001921DD /* Supporting Files */,
-				AE5E9FBB1A1A7250002EB460 /* FakeViewController.swift */,
-				AE5E9FBC1A1A7250002EB460 /* FakeViewController.xib */,
 			);
 			path = WriteMore;
 			sourceTree = "<group>";
@@ -230,7 +227,6 @@
 				AE5E9FC41A1A7495002EB460 /* DashboardViewController.xib in Resources */,
 				AE5E9FC21A1A744D002EB460 /* ProjectWindowController.xib in Resources */,
 				AE5E9FC01A1A72B4002EB460 /* ProjectViewController.xib in Resources */,
-				AE5E9FBE1A1A7250002EB460 /* FakeViewController.xib in Resources */,
 				AE5E9FB81A1A70E2002EB460 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,8 +245,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5E9FBD1A1A7250002EB460 /* FakeViewController.swift in Sources */,
 				AE5EF52C1A1019C700874295 /* ProjectViewController.swift in Sources */,
+				AE6307491A378EDA00F83FB2 /* Colors.swift in Sources */,
 				AEF3F60E1A0EB011001921DD /* DashboardViewController.swift in Sources */,
 				AE5EF55B1A1287C000874295 /* ClickableTableView.swift in Sources */,
 				AE9837DB1A236017008EA06E /* DailyWordCountProgressView.swift in Sources */,
