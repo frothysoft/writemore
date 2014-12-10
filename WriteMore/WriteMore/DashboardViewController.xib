@@ -41,7 +41,7 @@
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="beo-DG-k7C">
                                             <font key="font" size="14" name="AvenirNext-Bold"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" white="0.0" alpha="0.70000000000000007" colorSpace="deviceWhite"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
@@ -87,7 +87,7 @@
                     <rect key="frame" x="28" y="480" width="18" height="33"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="+" id="aJw-Qu-Jf6">
                         <font key="font" size="20" name="AvenirNext-Bold"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" white="0.0" alpha="0.70000000000000007" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
@@ -98,7 +98,7 @@
                             <rect key="frame" x="123" y="141" width="291" height="213"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="232" id="AGP-3J-73t">
                                 <font key="font" size="144" name="AmericanTypewriter-Bold"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" white="0.0" alpha="0.70000000000000007" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
@@ -106,7 +106,7 @@
                             <rect key="frame" x="209" y="133" width="143" height="41"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="words today" id="xy8-iu-JZc">
                                 <font key="font" size="24" name="AvenirNext-Regular"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" white="0.0" alpha="0.70000000000000007" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>

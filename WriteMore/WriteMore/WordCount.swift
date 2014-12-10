@@ -28,12 +28,12 @@ class WordCountDisplayable {
     if let wc = wordCount {
       self.numberOfWords = wc.numberOfWords
       if wc.numberOfWords >= 1 {
-        self.statusColor = NSColor(rgbValue: 0x6BB718)
+        self.statusColor = NSColor.greenStatusColor()
       } else {
-        self.statusColor = NSColor(rgbValue: 0xC2BEA8)
+        self.statusColor = NSColor.greyStatusColor()
       }
     } else {
-      self.statusColor = NSColor(rgbValue: 0xC2BEA8)
+      self.statusColor = NSColor.greyStatusColor()
     }
     self.dateString = WordCountDisplayable.dateFormatter().stringFromDate(date)
   }

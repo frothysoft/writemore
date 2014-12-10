@@ -38,12 +38,16 @@ class DailyWordCountProgressView: NSView {
     for wordCountDisplayable: WordCountDisplayable! in wordCountDisplayables {
       if let wcd = wordCountDisplayable {
         
-        let dateStringRect = CGRectMake(circleCenter.x + 10, circleCenter.y + circleSize.height / 2, 40, 30)
+        let dateStringRect = CGRectMake(circleCenter.x + 10, circleCenter.y + circleSize.height / 2, 60, 30)
         
         if let dateStringFont = NSFont(name: "Avenir Next", size: 16) {
+          let textColor = NSColor.greyTextColor()
           let paragraphStyle = NSMutableParagraphStyle()
           paragraphStyle.alignment = NSTextAlignment.LeftTextAlignment
-          let dateStringAttributes = [NSFontAttributeName: dateStringFont, NSParagraphStyleAttributeName: paragraphStyle]
+          let dateStringAttributes = [
+            NSFontAttributeName: dateStringFont,
+            NSForegroundColorAttributeName: textColor,
+            NSParagraphStyleAttributeName: paragraphStyle]
           wcd.dateString.drawInRect(dateStringRect, withAttributes: dateStringAttributes)
         }
         
@@ -69,7 +73,7 @@ class DailyWordCountProgressView: NSView {
     }
     
     NSGraphicsContext.currentContext()?.compositingOperation = NSCompositingOperation.CompositeDestinationAtop
-    NSColor(rgbValue: 0x979797).setStroke()
+    NSColor(rgbValue: 0x969696).setStroke()
     linePath.stroke()
   }
   

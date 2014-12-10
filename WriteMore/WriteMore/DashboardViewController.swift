@@ -114,6 +114,13 @@ extension DashboardViewController {
     var wordCount = wordCountStore.todaysWordCount()
     var wordCountController = NSObjectController(content: wordCount)
     wordCountTextField.bind("value", toObject: wordCountController, withKeyPath: "selection.numberOfWords", options: nil)
+    if let numberOfWords = wordCountTextField.stringValue.toInt() {
+      if numberOfWords >= 1 {
+        wordCountTextField.textColor = NSColor.greenStatusColor()
+      } else {
+        wordCountTextField.textColor = NSColor.greyTextColor()
+      }
+    }
   }
   
 }
