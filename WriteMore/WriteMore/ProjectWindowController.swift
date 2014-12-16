@@ -8,8 +8,6 @@
 
 import Cocoa
 
-// TODO 1: Move this class.
-// TODO 1: Take manager out of the name.
 class ProjectWindowManager {
   
   var openProjects: [Project: ProjectWindowController]! = [Project: ProjectWindowController]()
@@ -51,8 +49,7 @@ class ProjectWindowManager {
     if let projectWindowController = openProjects[project] {
       openProjects.removeValueForKey(project)
     } else {
-      // TODO 1: Use a logging framework.
-      println("WARNING: Closing a project that is not opened.")
+      assertionFailure("Closing a project that is not opened.")
     }
   }
   
@@ -62,8 +59,6 @@ class ProjectWindowController: NSWindowController, NSWindowDelegate {
   
   var project: Project?
   var projectWindowManager: ProjectWindowManager!
-  // TODO 1: Create the pvc inside this window controller. (Actually, read the docs first then
-  // set this up in the place where it makes the most since in mac world.)
   var projectViewController: ProjectViewController!
   
   override func windowDidLoad() {

@@ -34,16 +34,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
   
-  func applicationWillTerminate(aNotification: NSNotification) {
-    // Insert code here to tear down your application
-  }
-  
   func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
     return true
   }
   
-  // TODO 1: Move the core data stack out of the application delegate.
-  // MARK: - Core Data stack
+  // MARK: Core Data stack
   
   lazy var applicationDocumentsDirectory: NSURL = {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.frothysoft.WriteMore" in the user's Application Support directory.

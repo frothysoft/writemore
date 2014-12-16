@@ -14,7 +14,6 @@ class Project: NSManagedObject {
   @NSManaged var text: NSAttributedString
   @NSManaged var lastModifiedDate: NSDate
   
-  // TODO 0: Store the title in core data.
   lazy var title: NSAttributedString = {
     if self.text.length == 0 {
       return NSAttributedString(string: "New Project")
@@ -46,8 +45,7 @@ class CoreDataProjectStore: ProjectStore {
       project.lastModifiedDate = NSDate()
       return project
     } else {
-      // TODO 0: Handle failure.
-      println("MOC is nil. Project can not be created.")
+      assertionFailure("MOC is nil. Project can not be created.")
       return nil
     }
   }
@@ -57,8 +55,7 @@ class CoreDataProjectStore: ProjectStore {
       moc.deleteObject(project)
       return true
     } else {
-      // TODO 0: Handle failure.
-      println("MOC is nil. Project can not be deleted.")
+      assertionFailure("MOC is nil. Project can not be deleted.")
       return false
     }
   }

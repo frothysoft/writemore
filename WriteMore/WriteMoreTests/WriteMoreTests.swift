@@ -35,7 +35,6 @@ class WriteMoreTests: XCTestCase {
     
 }
 
-// TODO 0: Write database tests using an in memory core data store.
 /*
 NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"SomeClass")];
 NSString* path = [bundle pathForResource:@"WriteMore" ofType:@"momd"];

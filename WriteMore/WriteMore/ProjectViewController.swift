@@ -24,7 +24,6 @@ class ProjectViewController: NSViewController, NSTextViewDelegate {
     }
   }
   
-  // TODO 1: Do all this in the window controller.
   func configureViewController() {
     var app: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
     wordCountStore = app.wordCountStore
@@ -50,7 +49,6 @@ extension ProjectViewController {
   func updateWordCount() {
     var wordCount = countWords(textView.string!)
     println("Word count: \(wordCount) Previous word count: \(previousWordCount)")
-    // TODO 0: Handle the case where you are writing at night and you go over to the next day.
     if wordCount > previousWordCount {
       var todaysWordCount = wordCountStore.todaysWordCount()
       todaysWordCount.numberOfWords++
@@ -59,8 +57,6 @@ extension ProjectViewController {
   }
   
   func countWords(s: String) -> Int {
-    // TODO 0: Return 0 for a string containing all whitespace.
-    // TODO 0: Trim leading and trailing whitespace.
     if (s.isEmpty) { return 0 }
     var words = s.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     return words.count

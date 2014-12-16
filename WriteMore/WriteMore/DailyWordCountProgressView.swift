@@ -63,7 +63,6 @@ class DailyWordCountProgressView: NSView {
           linePath.lineToPoint(linePoint)
         }
       } else {
-        // TODO 0: Handle error.
         assertionFailure("ERROR: No word count displayable.")
       }
       

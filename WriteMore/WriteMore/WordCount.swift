@@ -133,8 +133,6 @@ class CoreDataWordCountStore: WordCountStore {
             pastWeeksWordCountDisplayables.append(wordCountDisplayable)
           } else {
             var wordCountDisplayable = WordCountDisplayable(wordCount: nil, date: startDate)
-            // TODO 0: Check if the startDate is before the first application launch time. Those 
-            // word counts might still be displayed in the UI, but will be grayed out.
             pastWeeksWordCountDisplayables.append(wordCountDisplayable)
           }
         } else {
@@ -180,10 +178,9 @@ extension CoreDataWordCountStore {
 extension CoreDataWordCountStore {
 
   func todaysDate() -> NSDate {
-    // TODO 0: This is from 2 am to 2am the next day. Make this more robust.
     var now = NSDate()
     var todaysComponenents = NSCalendar.currentCalendar().components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.HourCalendarUnit, fromDate: now)
-    todaysComponenents.hour = 2
+    todaysComponenents.hour = 4
     var today = NSCalendar.currentCalendar().dateFromComponents(todaysComponenents)!
     return today
   }

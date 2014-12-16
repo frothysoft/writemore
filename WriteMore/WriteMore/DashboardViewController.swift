@@ -23,14 +23,9 @@ class DashboardViewController: NSViewController {
   @IBOutlet var arrayController: NSArrayController!
   
   @IBOutlet weak var wordCountTextField: NSTextField!
-  
-  // TODO 0: Figure out how to reoopen the dashboard once it is closed and projects are still open.
-  
-  // TODO 1: Do all this in the window controller.
+
   func configureViewController() {
     var app: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
-    // TODO 0: Set up the view stack manually so the application delegate methods fire before this
-    // viewDidLoad() method is called.
     app.configureObjects()
     projectStore = app.projectStore
     projectWindowManager = app.projectWindowManager
@@ -40,11 +35,6 @@ class DashboardViewController: NSViewController {
     configureView()
     configureWordCountController()
     configureDailyWordCountProgressView()
-    
-    // TODO 1: This actually does not show the delete database button in debug mode.
-    #if DEBUG
-    configureDeleteDatabaseButton()
-    #endif
   }
   
   @IBAction func newProjectButtonPressed(sender: AnyObject) {
@@ -110,7 +100,6 @@ extension DashboardViewController: ClickableTableViewDelegate, NSTableViewDelega
 extension DashboardViewController {
   
   func configureWordCountController() {
-    // TODO 0: Reset if today's word count changes to tomorrow at 4 am.
     var wordCount = wordCountStore.todaysWordCount()
     var wordCountController = NSObjectController(content: wordCount)
     wordCountTextField.bind("value", toObject: wordCountController, withKeyPath: "selection.numberOfWords", options: nil)
@@ -140,8 +129,7 @@ extension DashboardViewController {
   }
 }
 
-// TODO 0: Remove the button from the storyboard and do not compile this code for production.
-// MARK: Debug
+// MARK: Delete database button
 
 extension DashboardViewController {
   
