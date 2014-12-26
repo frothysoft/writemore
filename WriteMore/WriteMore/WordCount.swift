@@ -24,6 +24,10 @@ class WordCountDisplayable {
     return dateFormatter
   }
   
+  class func dateStringFromDate(date: NSDate) -> String {
+    return WordCountDisplayable.dateFormatter().stringFromDate(date)
+  }
+  
   init(wordCount: WordCount?, date: NSDate) {
     if let wc = wordCount {
       self.numberOfWords = wc.numberOfWords
@@ -35,7 +39,7 @@ class WordCountDisplayable {
     } else {
       self.statusColor = NSColor.greyStatusColor()
     }
-    self.dateString = WordCountDisplayable.dateFormatter().stringFromDate(date)
+    self.dateString = WordCountDisplayable.dateStringFromDate(date)
   }
 }
 

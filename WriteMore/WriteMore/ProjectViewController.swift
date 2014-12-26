@@ -48,10 +48,10 @@ extension ProjectViewController {
   
   func updateWordCount() {
     var wordCount = countWords(textView.string!)
-    println("Word count: \(wordCount) Previous word count: \(previousWordCount)")
     if wordCount > previousWordCount {
       var todaysWordCount = wordCountStore.todaysWordCount()
       todaysWordCount.numberOfWords++
+      incrementTrackedWordCount(todaysWordCount)
     }
     previousWordCount = wordCount
   }
@@ -60,6 +60,12 @@ extension ProjectViewController {
     if (s.isEmpty) { return 0 }
     var words = s.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     return words.count
+  }
+  
+  func incrementTrackedWordCount(wordCount: WordCount) {
+    var dateString = WordCountDisplayable.dateStringFromDate(wordCount.date)
+    var property = "\(dateString) word count"
+    Mixpanel.sharedInstance().people.increment(property, by: 1)
   }
   
 }

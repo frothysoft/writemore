@@ -26,6 +26,7 @@ class Project: NSManagedObject {
 protocol ProjectStore {
   
   func newProject() -> Project!
+  func allProjects() -> [Project]!
   func deleteProject(project: Project) -> Bool
   
 }
@@ -46,6 +47,22 @@ class CoreDataProjectStore: ProjectStore {
       return project
     } else {
       assertionFailure("MOC is nil. Project can not be created.")
+      return nil
+    }
+  }
+  
+  func allProjects() -> [Project]! {
+    if let moc = managedObjectContext {
+      var fetch = NSFetchRequest(entityName: "Project")
+      var projects = moc.executeFetchRequest(fetch, error: nil)
+      if let ps = projects as [Project]! {
+        return ps
+      } else {
+        assertionFailure("There was a problem with the all projects fetch request.")
+        return nil;
+      }
+    } else {
+      assertionFailure("MOC is nil. Projects can not be retrieved.")
       return nil
     }
   }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3169471D657A43F8B6A8561B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D5CBA83A994A339B1C7F5E /* libPods.a */; };
 		AE5E9FB81A1A70E2002EB460 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FB71A1A70E2002EB460 /* MainMenu.xib */; };
 		AE5E9FC01A1A72B4002EB460 /* ProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FBF1A1A72B4002EB460 /* ProjectViewController.xib */; };
 		AE5E9FC21A1A744D002EB460 /* ProjectWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5E9FC11A1A744D002EB460 /* ProjectWindowController.xib */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CA96A8C6EEA4E699B1C68AE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AE2E6DBE1A4A0267001DF3F2 /* WriteMore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WriteMore-Bridging-Header.h"; sourceTree = "<group>"; };
 		AE5E9FB71A1A70E2002EB460 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		AE5E9FBF1A1A72B4002EB460 /* ProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectViewController.xib; sourceTree = "<group>"; };
 		AE5E9FC11A1A744D002EB460 /* ProjectWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectWindowController.xib; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		AEF3F6201A0EB011001921DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF3F6211A0EB011001921DD /* WriteMoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMoreTests.swift; sourceTree = "<group>"; };
 		AEF3F62B1A0EB046001921DD /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		C3D5CBA83A994A339B1C7F5E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3169471D657A43F8B6A8561B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,8 @@
 				AEF3F6081A0EB011001921DD /* WriteMore */,
 				AEF3F61E1A0EB011001921DD /* WriteMoreTests */,
 				AEF3F6071A0EB011001921DD /* Products */,
+				2CA96A8C6EEA4E699B1C68AE /* Pods.xcconfig */,
+				F8029D29022745359D8FD07D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +120,7 @@
 				AEF3F6121A0EB011001921DD /* Images.xcassets */,
 				AEF3F60F1A0EB011001921DD /* WriteMore.xcdatamodeld */,
 				AEF3F6091A0EB011001921DD /* Supporting Files */,
+				AE2E6DBE1A4A0267001DF3F2 /* WriteMore-Bridging-Header.h */,
 			);
 			path = WriteMore;
 			sourceTree = "<group>";
@@ -142,6 +150,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F8029D29022745359D8FD07D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3D5CBA83A994A339B1C7F5E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEF3F6251A0EB011001921DD /* Build configuration list for PBXNativeTarget "WriteMore" */;
 			buildPhases = (
+				ED380FA370814DC782610BBA /* Check Pods Manifest.lock */,
 				AEF3F6021A0EB011001921DD /* Sources */,
 				AEF3F6031A0EB011001921DD /* Frameworks */,
 				AEF3F6041A0EB011001921DD /* Resources */,
+				004D23870B154E1DAC75C83A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,6 +257,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		004D23870B154E1DAC75C83A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED380FA370814DC782610BBA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AEF3F6021A0EB011001921DD /* Sources */ = {
@@ -357,8 +408,10 @@
 		};
 		AEF3F6261A0EB011001921DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA96A8C6EEA4E699B1C68AE /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -367,13 +420,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "WriteMore/WriteMore-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		AEF3F6271A0EB011001921DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA96A8C6EEA4E699B1C68AE /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -382,6 +439,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "WriteMore/WriteMore-Bridging-Header.h";
 			};
 			name = Release;
 		};

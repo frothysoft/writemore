@@ -39,6 +39,7 @@ class DashboardViewController: NSViewController {
   
   @IBAction func newProjectButtonPressed(sender: AnyObject) {
     var project = projectStore.newProject()
+    Mixpanel.sharedInstance().track("Project created")
     showProject(project)
   }
   

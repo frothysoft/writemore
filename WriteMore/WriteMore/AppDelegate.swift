@@ -23,8 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func applicationDidFinishLaunching(aNotification: NSNotification) {
-    // Insert code here to initialize your application
-    
+    configureMixpanel()
+    Mixpanel.sharedInstance().track("App Launched")
     var dashboardViewController = DashboardViewController(nibName: "DashboardViewController", bundle: nil)
     if let dvc = dashboardViewController {
       window.contentView = dvc.view
@@ -36,6 +36,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
     return true
+  }
+  
+  // MARK: Mixpanel
+  
+  func configureMixpanel() {
+    Mixpanel.sharedInstanceWithToken("2a3e7976f89e5a56c80f8568bc33d67d")
+    Mixpanel.sharedInstance().identify(Mixpanel.sharedInstance().distinctId)
   }
   
   // MARK: Core Data stack
@@ -76,7 +83,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var coordinator: NSPersistentStoreCoordinator?
     if !shouldFail && (error == nil) {
       coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+      #if DEBUG
+      let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("WriteMore_Debug.storedata")
+      #else
       let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("WriteMore.storedata")
+      #endif
       if coordinator!.addPersistentStoreWithType(NSXMLStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
         coordinator = nil
       }
